@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>🧾 Whitelist Management</h3>
+<form action="/add_whitelist" method="post">
+    <input name="license_plate" placeholder="Plate" required>
+    <input name="vehicle_type" placeholder="Type" required>
+    <input name="owner" placeholder="Owner" required>
+    <button type="submit">Add / Update</button>
+</form>
+
+<table>
+    <tr><th>Plate</th><th>Type</th><th>Owner</th><th>Action</th></tr>
+    {% for entry in whitelist %}
+    <tr>
+        <td>{{ entry[0] }}</td><td>{{ entry[1] }}</td><td>{{ entry[2] }}</td>
+        <td><a href="/delete_whitelist/{{ entry[0] }}">❌ Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

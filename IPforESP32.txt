@@ -1,0 +1,22 @@
+#include <WiFi>
+
+const char* ssid = "YourWiFiSSID";
+const char* password = "YourWiFiPassword";
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("\nWiFi connected.");
+  Serial.print("ESP32 IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+  // your main logic
+}
