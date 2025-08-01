@@ -26,4 +26,6 @@ virtualenv==20.28.0
 opencv-python
 flask
 gunicorn==21.2.0
+easyocr==1.7.0
+
 
