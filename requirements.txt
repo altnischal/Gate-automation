@@ -25,3 +25,5 @@ urllib3==2.4.0
 virtualenv==20.28.0
 opencv-python
 flask
+gunicorn==21.2.0
+
